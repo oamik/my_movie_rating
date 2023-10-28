@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SearchForm from "./components/SearchForm";
+import MovieList from "./components/MovieList";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -15,6 +16,7 @@ function App() {
     <div className="App">
       <h1>My Movie Rating App</h1>
       <SearchForm onSubmit={searchMovies} />
+      <MovieList movies={movies} />
     </div>
   );
 }
