@@ -6,7 +6,7 @@ function App() {
   const [movies, setMovies] = useState([]);
 
   const searchMovies = async (query) => {
-    const apiKey = '292e33b0c4232942b8105a33d297914d';
+    const apiKey = process.env.REACT_APP_API_KEY;
     const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}`);
     const data = await response.json();
     setMovies(data.results);
