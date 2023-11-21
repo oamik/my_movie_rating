@@ -1,14 +1,19 @@
+// import default_poster from '../img/default_poster.jpg'
+import default_poster from '../img/default.jpeg'
+
 const generateImgSrc = (path) => {
-    // const siteName = `https://image.tmdb.org/t/p/w185`;
+    if (!path) return default_poster
     const siteName = `https://image.tmdb.org/t/p/w300`;
     return `${siteName}${path}`;
 }
-const MovieCard = ({ title, release_date, overview, poster_path }) => {
+const MovieCard = ({ title, year, overview, poster_path }) => {
     return (
         <div className="movie-card">
             <img src={generateImgSrc(poster_path)} alt={title} />
-            <h3>{title}</h3>
-            <p>Release Date: {release_date}</p>
+            <div className='info'>
+                <p>{title}</p>
+                <p>{year}</p>
+            </div>
             {/* <p>{overview}</p> */}
         </div>
     );
