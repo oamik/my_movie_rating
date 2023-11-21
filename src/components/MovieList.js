@@ -5,7 +5,18 @@ import "../App.css"
 const MovieList = ({ movies }) => {
     return (
         <div className="movie-list-container">
-            {movies.map((movie) => <MovieCard key={movie.id} {...movie} />)}
+            {movies.length ?
+                movies
+                    .sort((a, b) => {
+                        const yearA = new Date(a.release_date).getFullYear();
+                        const yearB = new Date(b.release_date).getFullYear();
+                        return yearB - yearA;
+                    })
+                    .map((movie) => (
+                        <MovieCard key={movie.id} year={new Date(movie.release_date).getFullYear()} {...movie} />
+                    ))
+                : <h2> No Results</h2>
+            }
         </div>
     );
 };
