@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SearchForm from "./components/SearchForm";
 import MovieList from "./components/MovieList";
 
@@ -12,6 +12,22 @@ function App() {
     setMovies(data.results);
   }
 
+  useEffect(() => {
+    const apiKey = process.env.REACT_APP_API_KEY;
+    const POPULAR_MOVIES_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`;
+    const fetchData = async () => {
+      try {
+        const response = await fetch(POPULAR_MOVIES_URL);
+        const data = await response.json();
+        setMovies(data.results);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className="App">
       <h1>My Movie Rating App</h1>
@@ -22,3 +38,9 @@ function App() {
 }
 
 export default App;
+
+
+// curl--request GET \
+//  --url 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=vote_average.desc&without_genres=99,10755&vote_count.gte=200' \
+//  --header 'Authorization: Bearer ACCESS_TOKEN' \
+//  --header 'accept: application/json'
