@@ -1,9 +1,9 @@
 body {
-    background-color: grey;
+    background-color: rgba(31, 31, 31, 0.9);
     font-family: 'EB Garamond', serif;
     font-weight: 500;
     font-size: 1.2em;
-    font-style: italic;
+    /* font-style: italic; */
 }
 
 
@@ -11,20 +11,19 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    /* align-content: space-between; */
     width: 90%;
     margin: auto;
-    color: white;
-    background-color: #1f1f1f;
+    color: whitesmoke;
     padding: 3rem;
 }
 
 .movie-card {
     width: 300px;
-    height: 470px;
+    height: 450px;
     perspective: 1000px;
     background-color: transparent;
     margin: 10px 0;
+    border-radius: 50%;
 }
 
 .movie-card-inner {
@@ -35,6 +34,7 @@ body {
     transition: transform 0.7s;
     transform-style: preserve-3d;
     box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5%;
 }
 
 .movie-card-front,
@@ -45,13 +45,22 @@ body {
     transition: transform 0.6s;
     transform-style: preserve-3d;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    border-radius: 5%;
 }
 
 .movie-card-back {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, .85);
     transform: rotateY(180deg);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    overflow: auto;
+    padding: 0 0.5rem;
+}
+
+.movie-card-back h4,
+h5 {
+    color: darkgoldenrod;
 }
 
 .movie-card:hover .movie-card-inner {
@@ -62,40 +71,18 @@ body {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     display: none;
+
 }
 
-/* Container holding the search bar */
 .search-bar {
-    position: relative;
-    width: 80%;
-    margin: 40px auto;
-    display: flex;
-    justify-content: space-between;
+    width: 90%;
+    margin: 3rem auto 1rem;
 }
 
-/* Styling for the search input */
 .search-bar input {
-    width: 85%;
-    padding: 10px;
+    width: 100%;
+    padding: 0.8rem 0.5rem;
     border: 2px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    outline: none;
-}
-
-/* Styling for the search button */
-.search-bar button {
-    width: 10%;
-    padding: 0.5em;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 10%;
-    cursor: pointer;
-    font-size: 1em;
-}
-
-/* Hover effect for the search button */
-.search-bar button:hover {
-    background-color: blue;
+    border-radius: 10px;
+    font-size: 1rem;
 }

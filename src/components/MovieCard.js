@@ -15,11 +15,11 @@ const MovieCard = ({ title, year, overview, poster_path }) => {
                 </div>
                 <div className="movie-card-back">
                     <h4>{title}</h4>
-                    <h4>{year}</h4>
-                    <p>{overview}</p>
+                    <h5>{year}</h5>
+                    <br />{overview}
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     );
 }
 
