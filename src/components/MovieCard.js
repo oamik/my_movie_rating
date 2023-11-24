@@ -9,12 +9,16 @@ const generateImgSrc = (path) => {
 const MovieCard = ({ title, year, overview, poster_path }) => {
     return (
         <div className="movie-card">
-            <img src={generateImgSrc(poster_path)} alt={title} />
-            <div className='info'>
-                <p>{title}</p>
-                <p>{year}</p>
+            <div className="movie-card-inner">
+                <div className="movie-card-front">
+                    <img src={generateImgSrc(poster_path)} alt={title} />
+                </div>
+                <div className="movie-card-back">
+                    <h4>{title}</h4>
+                    <h4>{year}</h4>
+                    <p>{overview}</p>
+                </div>
             </div>
-            {/* <p>{overview}</p> */}
         </div>
     );
 }
