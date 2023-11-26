@@ -11,7 +11,8 @@ const SearchForm = ({ onSubmit }) => {
     return (
         <form onSubmit={handleSubmit}>
             <div className="search-bar">
-                <input type="text"
+                <input autoFocus
+                    type="text"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     placeholder="Search for a movie..."

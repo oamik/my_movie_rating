@@ -1,4 +1,3 @@
-// import default_poster from '../img/default_poster.jpg'
 import default_poster from '../img/default.jpeg'
 
 const generateImgSrc = (path) => {
@@ -16,7 +15,10 @@ const MovieCard = ({ title, year, overview, poster_path }) => {
                 <div className="movie-card-back">
                     <h4>{title}</h4>
                     <h5>{year}</h5>
-                    <br />{overview}
+                    {/* <h5>{year ? year : ""}</h5> */}
+                    <div className='overview'>
+                        {overview}
+                    </div>
                 </div>
             </div >
         </div >
