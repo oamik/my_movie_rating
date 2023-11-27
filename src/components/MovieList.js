@@ -7,10 +7,8 @@ const MovieList = ({ movies }) => {
         <div className="movie-list-container">
             {movies.length ?
                 movies
-                    .sort((a, b) => {
-                        const yearA = new Date(a.release_date).getFullYear();
-                        const yearB = new Date(b.release_date).getFullYear();
-                        return yearB - yearA;
+                    .sort((m1, m2) => {
+                        return m2.popularity - m1.popularity;
                     })
                     .map((movie) => (
                         <MovieCard key={movie.id} year={new Date(movie.release_date).getFullYear()} {...movie} />

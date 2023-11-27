@@ -5,7 +5,7 @@ const generateImgSrc = (path) => {
     const siteName = `https://image.tmdb.org/t/p/w300`;
     return `${siteName}${path}`;
 }
-const MovieCard = ({ title, year, overview, poster_path }) => {
+const MovieCard = ({ title, year, overview, poster_path, popularity }) => {
     return (
         <div className="movie-card">
             <div className="movie-card-inner">
@@ -14,8 +14,7 @@ const MovieCard = ({ title, year, overview, poster_path }) => {
                 </div>
                 <div className="movie-card-back">
                     <h4>{title}</h4>
-                    <h5>{year}</h5>
-                    {/* <h5>{year ? year : ""}</h5> */}
+                    <h5>{year ? year : null}</h5>
                     <div className='overview'>
                         {overview}
                     </div>
