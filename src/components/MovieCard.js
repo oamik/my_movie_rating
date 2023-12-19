@@ -20,7 +20,7 @@ const MovieCard = ({ title, year, overview, poster_path, id }) => {
             const response = await fetch(TRAILER_URL);
             const data = await response.json();
             const newVideoId = data.results[0] ? data.results[0]["key"] : "TEMP_ID"
-            // setVideoId(newVideoId);
+            setVideoId(newVideoId);
             openModal();
         } catch (error) {
             console.error('Error fetching data:', error);
