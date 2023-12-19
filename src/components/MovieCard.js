@@ -46,10 +46,11 @@ const MovieCard = ({ title, year, overview, poster_path, id }) => {
                     <div className='overview'>
                         {overview}
                     </div>
+                    <p>Watch Trailer</p>
+                    <button className='play-button' onClick={playVideo}></button>
+                    <VideoModal isOpen={isModalOpen} onClose={closeModal} videoUrl={`https://www.youtube.com/watch?v=${videoId}`} />
                 </div>
             </div >
-            <button onClick={playVideo}>Watch Trailer</button>
-            <VideoModal isOpen={isModalOpen} onClose={closeModal} videoUrl={`https://www.youtube.com/watch?v=${videoId}`} />
         </div >
     );
 }

@@ -3,7 +3,6 @@ body {
     font-family: 'EB Garamond', serif;
     font-weight: 500;
     font-size: 1.1em;
-    /* font-style: italic; */
 }
 
 
@@ -56,6 +55,10 @@ body {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     overflow: auto;
+    /* ***** */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .movie-card-back div {
@@ -101,4 +104,31 @@ h5 {
     border: 2px solid #ccc;
     border-radius: 10px;
     font-size: 1rem;
+}
+
+.play-button {
+    width: 50px;
+    height: 50px;
+    background-color: #3498db;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+/* Style for the play icon inside the button */
+.play-button::before {
+    content: '\25B6';
+    /* Unicode character for a right-pointing triangle (play icon) */
+    font-size: 24px;
+    color: #fff;
+}
+
+/* Hover effect */
+.play-button:hover {
+    background-color: #2980b9;
 }
