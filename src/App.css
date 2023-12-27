@@ -47,13 +47,14 @@ body {
     overflow: hidden;
     border-radius: 5%;
     border: 1px solid white;
+    backface-visibility: hidden;
 }
 
 .movie-card-back {
     background-color: rgba(0, 0, 0, .85);
     transform: rotateY(180deg);
     -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+    /* backface-visibility: hidden; */
     overflow: auto;
     /* ***** */
     display: flex;
