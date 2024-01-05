@@ -1,3 +1,10 @@
+# Demo
+View the demo by clicking [this link](https://oamik.github.io/my_movie_rating/) 🙂
+
+# Screenshots
+![Movie Search App Screenshot_2](public/screenshots/2.png)
+![Movie Search App Screenshot_3](public/screenshots/3.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
